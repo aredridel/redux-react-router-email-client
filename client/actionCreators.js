@@ -3,7 +3,7 @@ import fetch from 'isomorphic-fetch';
 
 export const login = (email) => (
   dispatch => 
-  fetch('http://localhost:3000/get-user-info', {
+  fetch('/get-user-info', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -37,7 +37,7 @@ export const login = (email) => (
 
 export const fetchAndSelectBox = (box, email) => (
   dispatch => 
-  fetch(`http://localhost:3000/${box}`, {
+  fetch(`/${box}`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -83,7 +83,7 @@ export const selectEmailToRead = index => (
 
 export const sendEmail = (to, text, subject, from) => (
   dispatch =>
-  fetch('http://localhost:3000/compose', {
+  fetch('/compose', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -112,7 +112,7 @@ export const sendEmail = (to, text, subject, from) => (
 
 export const sendReply = (to, text, subject, thread_id, from) => (
   dispatch =>
-  fetch('http://localhost:3000/reply', {
+  fetch('/reply', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -143,7 +143,7 @@ export const sendReply = (to, text, subject, thread_id, from) => (
 
 export const forwardEmail = (to, html, text, subject, from) => (
   dispatch =>
-  fetch('http://localhost:3000/forward', {
+  fetch('/forward', {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -173,7 +173,7 @@ export const forwardEmail = (to, html, text, subject, from) => (
 
 export const fetchUnread = (email) => (
   dispatch => {
-    fetch(`http://localhost:3000/unread`, {
+    fetch(`/unread`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
